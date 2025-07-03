@@ -18,6 +18,7 @@ public:
             double weight,
             int id,
             std::string type);
+    Particle();
     bool operator<(const Particle& other) const;
     Vecteur getPos();
     Vecteur getSpe();

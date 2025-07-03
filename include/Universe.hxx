@@ -11,6 +11,7 @@ private:
     std::vector<Particle> Particles;
 public:
     Universe(unsigned int nb, std::vector<Particle> Particles);
+    Universe(unsigned int nb);
     unsigned int getNb() const;
     Particle getParticle(unsigned int i) const;
     void stromerVerlet(std::vector<Vecteur>& forces_old, 

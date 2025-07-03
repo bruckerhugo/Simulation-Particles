@@ -8,6 +8,9 @@ Universe::Universe(unsigned int nb, std::vector<Particle> Particles)
     this->Particles = Particles;
 }
 
+Universe::Universe(unsigned int nb) : Particles(nb), nbParticles(nb)
+{}
+
 Universe::~Universe()
 {
 }

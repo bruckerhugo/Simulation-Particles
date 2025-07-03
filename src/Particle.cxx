@@ -15,6 +15,15 @@ Particle::Particle(Vecteur pos,
     this->type = type;
 }
 
+Particle::Particle() {
+    this->pos = Vecteur();
+    this->speed = Vecteur();
+    this->force = Vecteur();
+    this->weight = 1;
+    this->id = 0;
+    this->type = "";
+}
+
 Particle::~Particle()
 {
 }
