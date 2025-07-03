@@ -4,4 +4,4 @@
 add_library(particules
             Vecteur.cxx
             Particle.cxx
-            Integrateur.cxx)
+            Universe.cxx)
