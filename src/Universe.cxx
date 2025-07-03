@@ -36,17 +36,16 @@ void Universe::stromerVerlet(std::vector<Vecteur>& forces_old,
         forces_old[i] = forces_new[i];
     }
 
-    for (size_t i = 0; i < Particles.size(); i++) {
-        for (size_t j = 0; j < Particles.size(); j++) {
-            if (i != j) {
-                Vecteur iv = Particles[i].getPos();
-                Vecteur jv = Particles[j].getPos();
-                double iweight = Particles[i].getWeight(), jweight = Particles[j].getWeight();
-                double dst = sqrt(pow(jv.getX() - iv.getX(), 2)
-                                + pow(jv.getY() - iv.getY(), 2)
-                                + pow(jv.getZ() - iv.getZ(), 2));
-                forces_new[i] += iweight * jweight / pow(dst, 3) * (jv - iv);
-            }
+    for (size_t i = 0; i < Particles.size()-1; i++) {
+        for (size_t j = i+1; j < Particles.size(); j++) {
+            Vecteur iv = Particles[i].getPos();
+            Vecteur jv = Particles[j].getPos();
+            double iweight = Particles[i].getWeight(), jweight = Particles[j].getWeight();
+            double dst = sqrt(pow(jv.getX() - iv.getX(), 2)
+                            + pow(jv.getY() - iv.getY(), 2)
+                            + pow(jv.getZ() - iv.getZ(), 2));
+            forces_new[i] += iweight * jweight / pow(dst, 3) * (jv - iv);
+            forces_new[j] += iweight * jweight / pow(dst, 3) * (iv - jv);
         }
     }
 
