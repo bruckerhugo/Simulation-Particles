@@ -34,6 +34,7 @@ void Universe::stromerVerlet(std::vector<Vecteur>& forces_old,
         double wei = Particles[i].getWeight();
         Particles[i].setPos(pos + delta_t * (spe + 0.5 / wei * delta_t * forces_old[i]));
         forces_old[i] = forces_new[i];
+        forces_new[i] = Vecteur();
     }
 
     for (size_t i = 0; i < Particles.size()-1; i++) {
