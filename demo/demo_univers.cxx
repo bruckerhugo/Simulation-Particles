@@ -10,7 +10,7 @@ int main() {
     std::mt19937 mt(rd());
     std::uniform_real_distribution<double> dist(0.0, 1.0);
 
-    int n = 1 << 5 << 3;
+    size_t n = (1 << 5)*(1 << 5)*(1 << 5);
 
     std::vector<Particle> particles(n);
 
