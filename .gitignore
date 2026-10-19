@@ -41,6 +41,8 @@ build/*
 # debug information files
 *.dwo
 
-# Configuration files
-.vscode/*
+# Agents
+CLAUDE.md
 
+# Spec findable on C.Picard
+spec/*
